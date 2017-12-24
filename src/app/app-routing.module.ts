@@ -7,9 +7,12 @@ import {SharedModule} from './shared/shared.module';
 import {DashboardPageComponent} from './dashboard/dashboard-page.component';
 import {AuthGuard} from './auth/auth-guard.service';
 import {AuthService} from './auth/auth.service';
+import {TransactionsPageComponent} from './transactions/transactions-page.component';
+import {WalletComponent} from './wallet/wallet.component';
 
 const appRoutes: Routes = [
   {path: '', pathMatch: 'full', component: DashboardPageComponent, canActivate: [AuthGuard]},
+  {path: 'transactions', pathMatch: 'full', component: TransactionsPageComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginPageComponent},
   {path: '**', redirectTo: ''}
 ];
@@ -18,7 +21,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     DashboardPageComponent,
-    LoginPageComponent
+    TransactionsPageComponent,
+    LoginPageComponent,
+    WalletComponent
   ],
   imports: [
     SharedModule,

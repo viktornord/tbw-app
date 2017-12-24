@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {UserService} from '../user/user.service';
-import {BlockChainService} from '../core/block-chain.service';
 
 @Component({
   selector: 'tbw-dashboard-page',
@@ -8,14 +7,9 @@ import {BlockChainService} from '../core/block-chain.service';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent {
-  user: tbw.IUser;
+  userInfo: tbw.IUserInfo;
 
-  constructor(userService: UserService, private blockChainService: BlockChainService) {
-    this.user = userService.getCurrentUser();
+  constructor(userService: UserService) {
+    this.userInfo = userService.getCurrentUser();
   }
-
-  mineCoins() {
-    this.blockChainService.mineCoins().subscribe(() => this.user.balance++);
-  }
-
 }

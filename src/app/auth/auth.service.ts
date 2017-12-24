@@ -20,7 +20,7 @@ export class AuthService {
     }
   }
 
-  login(credentials: ICredentials, isNewAccount = false): Observable<tbw.IUser> {
+  login(credentials: ICredentials, isNewAccount = false): Observable<tbw.IUserInfo> {
 
     return (isNewAccount
         ? this.register(credentials)
@@ -46,7 +46,7 @@ export class AuthService {
 
   logout(): void {
     this.authTokenService.removeAccessToken();
-    this.userService.setCurrentUser(null);
+    this.userService
     this.storageService.removeUserData();
   }
 
@@ -59,6 +59,6 @@ interface ICredentials {
 
 interface IUserData {
   accessToken: string;
-  user: tbw.IUser;
+  user: tbw.IUserInfo;
 }
 

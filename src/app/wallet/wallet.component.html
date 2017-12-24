@@ -1,0 +1,24 @@
+<h1>My wallet </h1>
+<div class="d-flex align-items-center">
+  <h3 class="mr-2">Account:</h3>
+  <p class="mb-0">{{user?.account}}</p>
+</div>
+<div class="d-flex align-items-center">
+  <h3 class="mr-2">Balance:</h3>
+  <p class="mb-0">{{user?.balance}}</p>
+</div>
+<button class="btn btn-primary" (click)="mineCoins()">Mine coins</button>
+<button class="btn btn-link" (click)="toggleTransferForm()" *ngIf="!isTransferFormVisible()">Make transfer</button>
+<div class="card mt-3" *ngIf="isTransferFormVisible()">
+  <div class="card-header">
+    New Transfer
+  </div>
+  <form [formGroup]="form" (submit)="submitTransfer()" (reset)="cancelTransfer(false)" class="card-body">
+    <p class="card-text">
+      Transfer <input type="number" formControlName="amount"> coins to account
+      <input type="text" fromControlName="receiver">
+    </p>
+    <button class="btn btn-secondary" type="reset">Cancel</button>
+    <button class="btn btn-primary" type="submit">Transfer</button>
+  </form>
+</div>

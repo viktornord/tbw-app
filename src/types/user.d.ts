@@ -1,7 +1,11 @@
 declare namespace tbw {
   interface IUser {
-    email: string;
-    account: string,
+    account: string;
     balance: number;
+  }
+
+  interface IUserInfo {
+    _id: string;
+    email: string;
   }
 }
