@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UserService} from '../user/user.service';
 
 @Component({
   selector: 'tbw-dashboard-page',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent {
+  user: tbw.IUser;
 
-  constructor() { }
+  constructor(userService: UserService) {
+    this.user = userService.getCurrentUser();
+  }
+
+  mineCoins() {
+
+  }
 
 }

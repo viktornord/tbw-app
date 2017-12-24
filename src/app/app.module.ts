@@ -12,6 +12,7 @@ import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
 import {AppInterceptor} from './app.interceptor';
 import {AuthTokenService} from './auth/auth-token.service';
+import {UserModule} from './user/user.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {AuthTokenService} from './auth/auth-token.service';
     CoreModule,
     CommonModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule
   ],
   providers: [
     AuthService,
