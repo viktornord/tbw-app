@@ -42,7 +42,8 @@ export class WalletComponent implements OnInit {
 
   submitTransfer(): void {
     const {receiver, amount} = this.form.getRawValue();
-    this.blockChainService.transfer(receiver, amount).subscribe(() => {
+    this.blockChainService.transfer(receiver, amount).subscribe(transaction => {
+      this.user.balance -= transaction.amount;
       this.form.reset();
       this.toggleTransferForm(false);
     });
