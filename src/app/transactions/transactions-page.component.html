@@ -23,7 +23,7 @@
   <ul class="list-group">
     <ng-container *ngFor="let transaction of transactions">
       <li class="list-group-item" *ngIf="isFiltered(transaction)">
-        From: {{transaction.from}} to {{transaction.to}} for amount {{transaction.amount}}
+        From {{transaction.from}} to {{transaction.to}} for amount {{transaction.amount}}
       </li>
     </ng-container>
   </ul>

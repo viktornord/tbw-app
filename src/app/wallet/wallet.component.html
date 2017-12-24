@@ -14,11 +14,15 @@
     New Transfer
   </div>
   <form [formGroup]="form" (submit)="submitTransfer()" (reset)="cancelTransfer(false)" class="card-body">
-    <p class="card-text">
-      Transfer <input type="number" formControlName="amount"> coins to account
-      <input type="text" fromControlName="receiver">
-    </p>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="email" class="form-control" id="amount" placeholder="Amount" formControlName="amount">
+    </div>
+    <div class="form-group">
+      <label for="receiver">Receiver account</label>
+      <input type="text" class="form-control" id="receiver" placeholder="Receiver" formControlName="receiver">
+    </div>
     <button class="btn btn-secondary" type="reset">Cancel</button>
-    <button class="btn btn-primary" type="submit">Transfer</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Transfer</button>
   </form>
 </div>

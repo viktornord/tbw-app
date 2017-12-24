@@ -14,6 +14,7 @@ import {AppInterceptor} from './app.interceptor';
 import {AuthTokenService} from './auth/auth-token.service';
 import {UserModule} from './user/user.module';
 import {BlockChainService} from './core/block-chain.service';
+import {ResponseInterceptor} from './response.interceptor';
 
 
 @NgModule({
@@ -38,7 +39,12 @@ import {BlockChainService} from './core/block-chain.service';
       provide: HTTP_INTERCEPTORS,
       useClass: AppInterceptor,
       multi: true
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })
