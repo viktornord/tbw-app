@@ -13,6 +13,7 @@ import {SharedModule} from './shared/shared.module';
 import {AppInterceptor} from './app.interceptor';
 import {AuthTokenService} from './auth/auth-token.service';
 import {UserModule} from './user/user.module';
+import {BlockChainService} from './core/block-chain.service';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {UserModule} from './user/user.module';
     AuthService,
     AuthTokenService,
     AuthGuard,
+    BlockChainService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AppInterceptor,
