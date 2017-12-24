@@ -46,7 +46,7 @@ export class AuthService {
 
   logout(): void {
     this.authTokenService.removeAccessToken();
-    this.userService
+    this.userService.setCurrentUser(null);
     this.storageService.removeUserData();
   }
 

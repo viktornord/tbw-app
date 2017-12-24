@@ -16,7 +16,7 @@
   <form [formGroup]="form" (submit)="submitTransfer()" (reset)="cancelTransfer(false)" class="card-body">
     <div class="form-group">
       <label for="amount">Amount</label>
-      <input type="email" class="form-control" id="amount" placeholder="Amount" formControlName="amount">
+      <input type="number" class="form-control" id="amount" placeholder="Amount" formControlName="amount">
     </div>
     <div class="form-group">
       <label for="receiver">Receiver account</label>

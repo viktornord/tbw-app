@@ -1,9 +1,12 @@
-<ul class="nav nav-pills p-1">
+<ul class="nav nav-pills p-1" *ngIf="isAuthorized()">
   <li class="nav-item">
     <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Wallet</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" routerLink="/transactions" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Transactions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="logout()">Logout</a>
   </li>
 </ul>
 <div>
